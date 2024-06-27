@@ -1,0 +1,93 @@
+[
+    {
+    "_id": "65e0f6b297def1738ce8b2c3",
+    "ID": 15,
+    "Image": "https://akns-images.eonline.com/eol_images/Entire_Site/20201114/rs_1200x1200-201214124949-1200-Chris_Pratt-Guardians_Of_The_Galaxy_-_2014.jpg?fit=around%7C1200:1200&output-quality=90&crop=1200:1200;center,top",
+    "Hero_Name": "Star-Lord",
+    "Real_Name": "Peter Quill",
+    "Superpower": "Skilled marksman and leader of the Guardians of the Galaxy",
+    "First_Appearance": "Marvel Preview #4 (1976)",
+    "Costume_Quirk": "Red jacket with a star emblem",
+    "Catchphrase": "I'm Star-Lord. Legendary outlaw.",
+    "Backstory": "Half-human, half-alien space adventurer and leader",
+    "Most_Useless_Moment": "Forgetting the Orb (Infinity Stone) in his ship's cassette player"
+    },
+    {
+    "_id": "65e0f6b297def1738ce8b2be",
+    "ID": 10,
+    "Image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f13bbcd3-88bd-4df0-9550-ae7e27a0437a/dfzc9s8-3be44585-739e-4754-8baa-5d3fb6f9d2e0.png/v1/fill/w_1920,h_1920,q_80,strp/dragadin_quicksilver_fanart_by_dragadin_dfzc9s8-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTkyMCIsInBhdGgiOiJcL2ZcL2YxM2JiY2QzLTg4YmQtNGRmMC05NTUwLWFlN2UyN2EwNDM3YVwvZGZ6YzlzOC0zYmU0NDU4NS03MzllLTQ3NTQtOGJhYS01ZDNmYjZmOWQyZTAucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.78JYHhCT-Ow_jlL3Tp4Vv4mTKms_ppaNGWCv16L7xuQ",
+    "Hero_Name": "Quicksilver",
+    "Real_Name": "Pietro Maximoff",
+    "Superpower": "Superhuman speed",
+    "First_Appearance": "X-Men #4 (1964)",
+    "Costume_Quirk": "Silver lightning patterns",
+    "Catchphrase": "Blink and you'll miss me.",
+    "Backstory": "Mutant with a sister, Scarlet Witch",
+    "Most_Useless_Moment": "Getting tripped while trying to use his speed"
+    },
+    {
+    "_id": "65e0f6b297def1738ce8b2c1",
+    "ID": 13,
+    "Image": "https://cdn.britannica.com/18/182818-050-593F418A/Movie-poster-Ant-Man-Paul-Rudd-Scott-Lang.jpg",
+    "Hero_Name": "Ant-Man",
+    "Real_Name": "Scott Lang",
+    "Superpower": "Size-changing and communication with ants",
+    "First_Appearance": "Avengers #181 (1979)",
+    "Costume_Quirk": "Red and black costume",
+    "Catchphrase": "It's not the size that matters.",
+    "Backstory": "Reformed thief using Pym Particles to shrink and grow",
+    "Most_Useless_Moment": "Accidentally shrinking too small and getting stepped on"
+    },
+    {
+    "_id": "65e0f6b297def1738ce8b2c0",
+    "ID": 12,
+    "Image": "https://images.news18.com/ibnlive/uploads/2021/07/1627623818_scarlett-johansson.jpg",
+    "Hero_Name": "Black Widow",
+    "Real_Name": "Natasha Romanoff",
+    "Superpower": "Exceptional martial artist and spy",
+    "First_Appearance": "Tales of Suspense #52 (1964)",
+    "Costume_Quirk": "Black tactical suit",
+    "Catchphrase": "Red in my ledger.",
+    "Backstory": "Former Russian operative turned S.H.I.E.L.D. agent",
+    "Most_Useless_Moment": "Underestimating an opponent and needing rescue"
+    },
+    {
+    "_id": "65e0f6b297def1738ce8b2bf",
+    "ID": 11,
+    "Image": "https://c4.wallpaperflare.com/wallpaper/980/286/462/the-vision-marvel-cinematic-universe-avengers-age-of-ultron-paul-bettany-wallpaper-preview.jpg",
+    "Hero_Name": "Vision",
+    "Real_Name": "Vision",
+    "Superpower": "Android with superhuman strength",
+    "First_Appearance": "Avengers #57 (1968)",
+    "Costume_Quirk": "Synthezoid appearance",
+    "Catchphrase": "I am on your side, Captain.",
+    "Backstory": "Created by Ultron, turned Avenger",
+    "Most_Useless_Moment": "Phasing through a wall and getting stuck"
+    },
+    {
+    "_id": "65e0f6b297def1738ce8b2c2",
+    "ID": 14,
+    "Image": "https://i.pinimg.com/736x/46/f6/f2/46f6f2dc7b0cafc64cab9bf9d77b889f.jpg",
+    "Hero_Name": "Mantis",
+    "Real_Name": "Mantis",
+    "Superpower": "Empathy, martial arts, and precognition",
+    "First_Appearance": "Avengers #112 (1973)",
+    "Costume_Quirk": "Green and red costume",
+    "Catchphrase": "Pleased to meet you, Celestial Madonna.",
+    "Backstory": "Raised by the Priests of Pama, Celestial Madonna prophecy",
+    "Most_Useless_Moment": "Misinterpreting a vision and causing unnecessary conflict"
+    },
+    {
+    "_id": "65e0f6b297def1738ce8b2bd",
+    "ID": 9,
+    "Image": "https://staticg.sportskeeda.com/editor/2023/01/f87ca-16743744649802-1920.jpg",
+    "Hero_Name": "Hawkeye",
+    "Real_Name": "Clint Barton",
+    "Superpower": "Master archer and marksman",
+    "First_Appearance": "Tales of Suspense #57 (1964)",
+    "Costume_Quirk": "Purple costume with bow",
+    "Catchphrase": "Never miss a shot.",
+    "Backstory": "Former circus performer turned superhero",
+    "Most_Useless_Moment": "Running out of arrows during a crucial battle"
+    }
+    ]
