@@ -10,7 +10,7 @@ import Profile from './component/Profile';
 import DcAddMovies from './component/DcAddMovies';
 import AddMarvelMovies from './component/AddMarvelMovies';
 import DcMovies from './component/DcMovies';
-
+import Bio from './component/Bio';
 const Drawer = createDrawerNavigator();
 
 const App = () => {
@@ -70,6 +70,10 @@ const App = () => {
         <Drawer.Screen
           name='Marvel Movies Add'
           component={AddMarvelMovies}
+        />
+        <Drawer.Screen 
+          name='Bio'
+          component={Bio}
         />
       </Drawer.Navigator>
     </NavigationContainer>

@@ -17,7 +17,7 @@ function Login() {
     }
 
     try {
-      const response = await axios.post("http://192.168.125.101:5001/user/login", {
+      const response = await axios.post("http://192.168.125.101:5002/user/login", {
         email,
         password,
       });
@@ -59,6 +59,7 @@ function Login() {
           onPress={handleSubmit}
         />
       </View>
+     
       <Text style={styles.footerText}>Don't have an account? <Text onPress={()=>navigation.navigate("SignUp")} style={{color:"blue",fontSize:20}}>SignUp</Text></Text>
     </View>
   );

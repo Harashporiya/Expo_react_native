@@ -10,8 +10,8 @@ function MoviesShow() {
   const fetchData = async () => {
     try {
       const [marvelResponse, additionalResponse] = await Promise.all([
-        axios.get("http://192.168.125.101:5001/marvel"),
-        axios.get("http://192.168.125.101:5001/movies/marvel/add")
+        axios.get("http://192.168.125.101:5002/marvel"),
+        axios.get("http://192.168.125.101:5002/movies/marvel/add")
       ]);
       setMarvelData(marvelResponse.data);
       setAdditionalData(additionalResponse.data);

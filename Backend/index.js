@@ -6,14 +6,14 @@ const marvelMovies = require("./Marvel_Movies.json");
 const DcMovies = require("./Dc_movies.json");
 const DcRouter = require("./route/dc")
 const MarvelRouter = require("./route/marvel")
-
+const bioRouter = require("./route/bio")
 const jwt = require("jsonwebtoken")
 const User = require("./modle/user")
 
 const secretkey = "snsjsnisjehyrhdbbsiskednj";
 
 const app = express();
-const PORT = 5001;
+const PORT = 5002;
 
 mongoose.connect("mongodb://127.0.0.1:27017/Expo", {
   useNewUrlParser: true,
@@ -36,6 +36,7 @@ app.get("/dc",cors(), async (req, res) => {
 app.use("/movies",DcRouter);
 app.use("/movies",MarvelRouter);
 app.use("/user", UserRouter);
+app.use("/add",bioRouter)
 
 app.get("/user/data",async(req,res)=>{
   const token = req.headers.authorization

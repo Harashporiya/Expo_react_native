@@ -11,8 +11,8 @@ function DcMovies() {
   const fetchData = async () => {
     try {
       const [dcResponse, additionalResponse] = await Promise.all([
-        axios.get("http://192.168.125.101:5001/dc"),
-        axios.get("http://192.168.125.101:5001/movies/dc/add")
+        axios.get("http://192.168.125.101:5002/dc"),
+        axios.get("http://192.168.125.101:5002/movies/dc/add")
       ]);
       setDcData(dcResponse.data);
       setAdditionalData(additionalResponse.data);

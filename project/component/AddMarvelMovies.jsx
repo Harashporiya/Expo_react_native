@@ -10,7 +10,7 @@ function AddMarvekMovies() {
  
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("http://192.168.125.101:5001/movies/add/marvel", {
+      const response = await axios.post("http://192.168.125.101:5002/movies/add/marvel", {
         Hero_Name,
         Real_Name,
         Image: ImageURI,
