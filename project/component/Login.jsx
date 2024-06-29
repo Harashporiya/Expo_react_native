@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View, Image, Alert } from 'react-native';
+import {Api_Url} from "../FecthedApi/Api"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ function Login() {
     }
 
     try {
-      const response = await axios.post("http://192.168.125.101:5002/user/login", {
+      const response = await axios.post(`${Api_Url}/user/login`, {
         email,
         password,
       });

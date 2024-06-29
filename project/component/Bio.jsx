@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Alert, Button } from 'react-native';
+import {Api_Url} from "../FecthedApi/Api"
 
 function Bio() {
     const [edit, setEdit] = useState("");
@@ -11,7 +12,7 @@ function Bio() {
             Alert.alert("error","All fields are required.")
         }
         try {
-            const response = await axios.post("http://192.168.125.101:5002/add/editbio", {
+            const response = await axios.post(`${Api_Url}/add/editbio`, {
                 editBio: edit, 
             });
             // console.log(response.data);

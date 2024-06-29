@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
+import {Api_Url} from "../FecthedApi/Api"
 
 function Profile() {
   const navigation = useNavigation();
@@ -11,7 +12,7 @@ function Profile() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://192.168.125.101:5002/add/add/bio");
+      const response = await axios.get(`${Api_Url}/add/add/bio`);
       setData(response.data);
     } catch (error) {
       console.log("Error fetching bio data:", error);
@@ -20,7 +21,7 @@ function Profile() {
 
   const fetchActors = async () => {
     try {
-      const response = await axios.get("http://192.168.125.101:5002/actors/all/actors");
+      const response = await axios.get(`${Api_Url}/actors/all/actors`);
       setData1(response.data);
       setActorCount(response.data.length);  
     } catch (error) {

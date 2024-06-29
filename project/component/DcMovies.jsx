@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, ActivityIndicator, ScrollView, StyleSheet } from 'react-native';
 import axios from 'axios';
+import {Api_Url} from "../FecthedApi/Api"
 
 function DcMovies() {
   const [dcData, setDcData] = useState([]);
@@ -13,8 +14,8 @@ function DcMovies() {
     
     try {
       const [dcResponse, additionalResponse] = await Promise.all([
-        axios.get("http://192.168.125.101:5002/dc"),
-        axios.get("http://192.168.125.101:5002/movies/dc/add")
+        axios.get(`${Api_Url}/dc`),
+        axios.get(`${Api_Url}/movies/dc/add`)
       ]);
       setDcData(dcResponse.data);
       setAdditionalData(additionalResponse.data);

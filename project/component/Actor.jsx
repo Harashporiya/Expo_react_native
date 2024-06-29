@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import {Api_Url} from "../FecthedApi/Api"
 
 function Actor() {
   const [actorName, setActorName] = useState('');
@@ -13,7 +14,7 @@ function Actor() {
     }
 
     try {
-      const response = await axios.post("http://192.168.125.101:5002/actors/add/actor", {
+      const response = await axios.post(`${Api_Url}/actors/add/actor`, {
         actorName:actorName,
         Image:image
       });
