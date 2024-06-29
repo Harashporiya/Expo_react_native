@@ -6,6 +6,10 @@ function Bio() {
     const [edit, setEdit] = useState("");
 
     const handler = async () => {
+
+        if(!edit.trim()){
+            Alert.alert("error","All fields are required.")
+        }
         try {
             const response = await axios.post("http://192.168.125.101:5002/add/editbio", {
                 editBio: edit, 
@@ -15,7 +19,7 @@ function Bio() {
             Alert.alert("Success", "Edit Successful");
         } catch (error) {
             console.log(error, "error");
-            Alert.alert("error");
+            // Alert.alert("error");
         }
     };
 
@@ -37,28 +41,29 @@ function Bio() {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 20,
-        backgroundColor: '#f8f8f8',
         flex: 1,
+    backgroundColor: 'mediumblue',
+    padding: 20,
+    justifyContent: 'center',
     },
     headerText: {
         fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
+    color: 'white',
+    marginBottom: 20,
+    textAlign: 'center',
     },
     textarea: {
         borderColor: 'gray',
         borderWidth: 2,
         marginVertical: 10,
-        padding: 10,
         fontSize: 20,
-        width: '100%',
-        maxWidth: 330,
-        borderRadius: 8,
+        maxWidth: 390,
         height: 100, 
         textAlignVertical: 'top', 
+        backgroundColor: 'white',
+        padding: 10,
+        marginBottom: 10,
+           borderRadius: 5,
     }
 });
 

@@ -10,6 +10,11 @@ function DcAddMovies() {
 
 
   const handleSubmit = async () => {
+
+    if(!Hero_Name.trim() || !Real_Name.trim() || !Superpower.trim() || !ImageURI.trim() ){
+      Alert.alert("error","All fields are required")
+    }
+
     try {
       const response = await axios.post("http://192.168.125.101:5002/movies/add/dc", {
         Hero_Name,
@@ -24,8 +29,8 @@ function DcAddMovies() {
       setImageURI("");
       setSuperpower("");
     } catch (error) {
-      console.error('Error submitting the form:', error);
-      Alert.alert("Error", "Error");
+      console.log('Error submitting the form:', error);
+      // Alert.alert("Error", "Error");
     }
   };
 

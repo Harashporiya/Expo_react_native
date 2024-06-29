@@ -9,7 +9,7 @@ const MarvelRouter = require("./route/marvel")
 const bioRouter = require("./route/bio")
 const jwt = require("jsonwebtoken")
 const User = require("./modle/user")
-
+const ActorRouter = require("./route/actor")
 const secretkey = "snsjsnisjehyrhdbbsiskednj";
 
 const app = express();
@@ -37,6 +37,8 @@ app.use("/movies",DcRouter);
 app.use("/movies",MarvelRouter);
 app.use("/user", UserRouter);
 app.use("/add",bioRouter)
+app.use("/actors",ActorRouter);
+
 
 app.get("/user/data",async(req,res)=>{
   const token = req.headers.authorization

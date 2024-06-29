@@ -1,4 +1,4 @@
-import 'react-native-gesture-handler'; // Ensure this is at the top
+import 'react-native-gesture-handler'; 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -11,6 +11,8 @@ import DcAddMovies from './component/DcAddMovies';
 import AddMarvelMovies from './component/AddMarvelMovies';
 import DcMovies from './component/DcMovies';
 import Bio from './component/Bio';
+import Actor from './component/Actor';
+
 const Drawer = createDrawerNavigator();
 
 const App = () => {
@@ -74,6 +76,10 @@ const App = () => {
         <Drawer.Screen 
           name='Bio'
           component={Bio}
+        />
+        <Drawer.Screen
+          name='Actor'
+          component={Actor}
         />
       </Drawer.Navigator>
     </NavigationContainer>

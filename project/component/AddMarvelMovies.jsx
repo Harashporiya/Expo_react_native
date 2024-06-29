@@ -8,7 +8,14 @@ function AddMarvekMovies() {
   const [Superpower, setSuperpower] = useState('');
   const [ImageURI, setImageURI] = useState('');
  
+ 
+
   const handleSubmit = async () => {
+
+    if(!Hero_Name.trim() || !Real_Name.trim() || !Superpower.trim() || !ImageURI.trim() ){
+      Alert.alert("error","All fields are required")
+    }
+
     try {
       const response = await axios.post("http://192.168.125.101:5002/movies/add/marvel", {
         Hero_Name,
@@ -24,8 +31,8 @@ function AddMarvekMovies() {
       setSuperpower("");
     
     } catch (error) {
-      console.error('Error submitting the form:', error);
-      Alert.alert("Error", `Failed to submit: ${error.message}`);
+      console.log('Error submitting the form:', error);
+      // Alert.alert("Error","error");
     }
   };
   

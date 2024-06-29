@@ -6,26 +6,37 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'rea
 function Profile() {
   const navigation = useNavigation();
   const [data, setData] = useState([]);
+  const [data1, setData1] = useState([]);
+  const [actorCount, setActorCount] = useState(0);
 
   const fetchData = async () => {
     try {
       const response = await axios.get("http://192.168.125.101:5002/add/add/bio");
       setData(response.data);
-     
     } catch (error) {
-      console.log("Error fetching data:", error);
+      console.log("Error fetching bio data:", error);
+    }
+  };
+
+  const fetchActors = async () => {
+    try {
+      const response = await axios.get("http://192.168.125.101:5002/actors/all/actors");
+      setData1(response.data);
+      setActorCount(response.data.length);  
+    } catch (error) {
+      console.log("Error fetching actors data:", error);
     }
   };
 
   useEffect(() => {
-    const interval = setInterval(()=>{
-      fetchData()
-    },1000); 
+    const interval = setInterval(() => {
+      fetchData();
+      fetchActors();
+    }, 1000);
 
-  
     fetchData();
+    fetchActors();
 
-    
     return () => clearInterval(interval);
   }, []);
 
@@ -37,7 +48,7 @@ function Profile() {
         </View>
         <Text style={styles.name}>UserName</Text>
         <View style={styles.separator} />
-        {data && data.map((item) => (
+        {data.map((item) => (
           <View key={item._id}>
             <Text style={styles.bioText}>{item.editBio}</Text>
           </View>
@@ -47,10 +58,19 @@ function Profile() {
           <Text style={styles.buttonText}>Edit</Text>
         </TouchableOpacity>
       </View>
-    
+
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Your Favorite Actor Name List Add</Text>
-      
+        <Text style={styles.sectionTitle}>Your Favorite Actor Name List</Text>
+        <Text style={styles.actorCount}>Total Actors: {actorCount}</Text>
+        {data1.map((item) => (
+          <View key={item._id} style={styles.actorContainer}>
+            <Text style={styles.actorName}>{item.actorName}</Text>
+            <Image style={styles.actorImage} source={{ uri: item.Image }} />
+          </View>
+        ))}
+        <TouchableOpacity style={styles.editButton} onPress={() => navigation.navigate("Actor")}>
+          <Text style={styles.buttonText}>Add Actor</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -59,8 +79,7 @@ function Profile() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'mediumblue',
-    alignItems: 'center',
+    backgroundColor: "mediumblue",
     padding: 20,
   },
   circle: {
@@ -105,17 +124,36 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    color: 'white',
+    color: 'white'
   },
   section: {
     backgroundColor: 'mediumblue',
-    // marginTop: 20,
     padding: 20,
   },
   sectionTitle: {
-    fontSize: 20,
+    fontSize: 24,
     color: 'white',
     marginBottom: 10,
+  },
+  actorCount: {
+    color: 'white',
+    fontSize: 24,
+    marginBottom: 10,
+  },
+  actorContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  actorName: {
+    color: 'white',
+    fontSize: 24,
+    flex: 1,
+  },
+  actorImage: {
+    width: 70,
+    height:70,
+    borderRadius: 50,
   },
 });
 

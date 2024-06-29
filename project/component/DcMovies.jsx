@@ -9,6 +9,8 @@ function DcMovies() {
   const [error, setError] = useState(null);
 
   const fetchData = async () => {
+
+    
     try {
       const [dcResponse, additionalResponse] = await Promise.all([
         axios.get("http://192.168.125.101:5002/dc"),
