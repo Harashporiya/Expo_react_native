@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View, Image, Alert } from 'react-native';
-import {Api_Url} from "../FecthedApi/Api"
+import {Api_Url} from "../../../FecthedApi/Api"
 
 function Login() {
   const [email, setEmail] = useState("");

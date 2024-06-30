@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Alert, Button, StyleSheet, Text, TextInput, View, Image } from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
-import {Api_Url} from "../FecthedApi/Api"
+import {Api_Url} from "../../../FecthedApi/Api"
 
 const Signup = () => {
   const [username, setUsername] = useState("");

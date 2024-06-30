@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
-import {Api_Url} from "../FecthedApi/Api"
+import {Api_Url} from "../../../FecthedApi/Api"
 
 function Profile() {
   const navigation = useNavigation();

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Alert, Button } from 'react-native';
-import {Api_Url} from "../FecthedApi/Api"
+import {Api_Url} from "../../../FecthedApi/Api"
 
 function Bio() {
     const [edit, setEdit] = useState("");
