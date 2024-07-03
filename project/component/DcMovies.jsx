@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, ActivityIndicator, ScrollView, StyleSheet } from 'react-native';
 import axios from 'axios';
-import {Api_Url} from "../../../FecthedApi/Api"
+import {Api_Url} from "../FecthedApi/Api"
 
 function DcMovies() {
   const [dcData, setDcData] = useState([]);
