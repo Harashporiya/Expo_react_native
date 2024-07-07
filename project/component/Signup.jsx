@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Alert, Button, StyleSheet, Text, TextInput, View, Image } from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
-import {Api_Url} from "../FecthedApi/Api"
+import {Api_Url} from "../../../FecthedApi/Api"
+import  AsyncStorage from "@react-native-async-storage/async-storage"
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -26,6 +27,9 @@ const Signup = () => {
       setEmail("");
       setPassword("");
       // console.log(response.data)
+      const token = response.data.token;
+      await AsyncStorage.setItem('token', token);
+      // console.log(response.data.token)
       Alert.alert("Success", "Account created successfully!");
       navigation.navigate("Home"); 
     } catch (error) {

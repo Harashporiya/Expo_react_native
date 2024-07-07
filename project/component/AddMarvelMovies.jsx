@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button, Alert, ImageBackground } from 'react-native';
-import {Api_Url} from "../FecthedApi/Api"
+import {Api_Url} from "../../../FecthedApi/Api"
 
 function AddMarvekMovies() {
   const [Hero_Name, setHero_Name] = useState('');

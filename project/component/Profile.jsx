@@ -2,14 +2,41 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
-import {Api_Url} from "../FecthedApi/Api"
+import { Api_Url } from "../../../FecthedApi/Api";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function Profile() {
   const navigation = useNavigation();
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
   const [actorCount, setActorCount] = useState(0);
+  const [username, setUsername] = useState("");
 
+  const fetchUserData = async () => {
+    try {
+      const token = await AsyncStorage.getItem('token');
+      if (!token) {
+        console.log("No token found");
+        return;
+      }
+      console.log("Token found:", token);
+
+      const response = await axios.get(`${Api_Url}/user/data`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      console.log("Username", response.data.username);
+      setUsername(response.data.username);
+    } catch (error) {
+      console.log("Error fetching user data:", error);
+      if (error.response) {
+        console.log("Status:", error.response.status);
+        console.log("Data:", error.response.data);
+      }
+    }
+  };
+  // fetchUserData()
   const fetchData = async () => {
     try {
       const response = await axios.get(`${Api_Url}/add/add/bio`);
@@ -23,7 +50,7 @@ function Profile() {
     try {
       const response = await axios.get(`${Api_Url}/actors/all/actors`);
       setData1(response.data);
-      setActorCount(response.data.length);  
+      setActorCount(response.data.length);
     } catch (error) {
       console.log("Error fetching actors data:", error);
     }
@@ -33,10 +60,12 @@ function Profile() {
     const interval = setInterval(() => {
       fetchData();
       fetchActors();
+      // fetchUserData();
     }, 1000);
 
     fetchData();
     fetchActors();
+    // fetchUserData();
 
     return () => clearInterval(interval);
   }, []);
@@ -47,7 +76,7 @@ function Profile() {
         <View style={styles.circle}>
           <Image style={styles.image} source={{ uri: "https://i.pinimg.com/564x/de/6e/8d/de6e8d53598eecfb6a2d86919b267791.jpg" }} />
         </View>
-        <Text style={styles.name}>UserName</Text>
+        <Text style={styles.name}>{username}</Text>
         <View style={styles.separator} />
         {data.map((item) => (
           <View key={item._id}>
@@ -153,7 +182,7 @@ const styles = StyleSheet.create({
   },
   actorImage: {
     width: 70,
-    height:70,
+    height: 70,
     borderRadius: 50,
   },
 });

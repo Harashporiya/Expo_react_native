@@ -9,14 +9,15 @@ import MoviesShow from './component/MoviesShow';
 import Profile from './component/Profile';
 import DcAddMovies from './component/DcAddMovies';
 import AddMarvelMovies from './component/AddMarvelMovies';
-import DcMovies from './component/DcMovies';
 import Bio from './component/Bio';
 import Actor from './component/Actor';
+import { StatusBar } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
 const App = () => {
   return (
+    <>
     <NavigationContainer>
       <Drawer.Navigator
         screenOptions={{
@@ -83,6 +84,11 @@ const App = () => {
         />
       </Drawer.Navigator>
     </NavigationContainer>
+    <StatusBar 
+      barStyle={"light-content"}
+    
+    />
+    </>
   );
 }
 
